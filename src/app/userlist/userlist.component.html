@@ -1,0 +1,48 @@
+<app-header-menu></app-header-menu>
+<div id="main">
+  <div class="container">
+    <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+      <span class="input-header">Login</span>
+      <br>
+      <input class="mt-4 py-2 form-control" type="text" formControlName="login" placeholder="Enter login" pattern="\d{3}[\-]\d{3}[\-]\d{4}">
+      <span class="warning-msg" *ngIf="checkoutForm.controls['login'].invalid && checkoutForm.controls['login'].touched">invalid</span>
+      <br>
+      <span class="input-header">Password</span>
+      <br>
+      <input class="mt-4 py-2 form-control" type="text" formControlName="password" placeholder="Enter password">
+      <span class="warning-msg" *ngIf="checkoutForm.controls['password'].invalid && checkoutForm.controls['password'].touched">invalid</span>
+      <br>
+      <span class="input-header">Email address</span>
+      <br>
+      <input class="mt-4 py-2 form-control" type="text" formControlName="email" placeholder="Enter email">
+      <span  class="warning-msg" *ngIf="checkoutForm.controls['email'].invalid && checkoutForm.controls['email'].touched">invalid</span>
+      <br>
+      <button type="submit" class="btn btn-outline-success btn-lg" [disabled]='!isEdit && arrUsers.length > 2'>
+        {{isEdit ? 'Edit user' : 'Add user' }}
+      </button>
+    </form>
+  </div>
+
+  <div class="container second" class="mt-5">
+    <table>
+      <thead>
+        <th>#</th>
+        <th>Login</th>
+        <th>Password</th>
+        <th>Email</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of arrUsers; let i = index;">
+          <td>{{i+1}}</td>
+          <td>{{user.login}}</td>
+          <td>{{user.password}}</td>
+          <td>{{user.email}}</td>
+          <td><button (click)="editUser(i)" class="btn btn-lg btn-warning" (click)="isEdit =!isEdit">Edit</button></td>
+          <td><button [disabled]='isEdit' (click)="deleteUser(i)" class="btn btn-lg btn-danger">Delete</button></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Task</th>
+      <th scope="col">Check</th>
+      <th scope="col">DONE/IN PROGRESS</th>
+      <th scope="col">Edit</th>
+      <th scope="col">DELETE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let task of tasks; let i = index;">
+      <th scope="row">{{i+1}}</th>
+      <td>{{task.name}}</td>
+      <td><input type="checkbox" [(ngModel)]="task.isDone"> </td>
+      <td *ngIf="!task.isDone" class="red-style">In PROGRESS</td>
+      <td *ngIf="task.isDone" class="green-style">Done</td>
+      <td><button class="btn btn-lg btn-warning" (click)="editUser(i)">Edit</button></td>
+      <td><button class="btn btn-lg btn-danger" (click)="deleteUser(i)" [disabled]="!task.isDone">Delete</button></td>
+
+    </tr>
+  </tbody>
+</table>
+<ng-container *ngIf="isEditing">
+  <div class="edit-field">
+    <input type="text" class="form-control edit-input" [(ngModel)]="editInput" name="editInput">
+    <button class="btn btn-lg btn-success save-btn" (click)="saveNewName()">save</button>
+  </div>
+</ng-container>

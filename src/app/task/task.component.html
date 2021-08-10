@@ -1,0 +1,17 @@
+<app-header-menu></app-header-menu>
+<div class="container">
+  <div class="header">
+    Plan your day!</div>
+  <div class="semi-header">
+    User: Ivan Ivanov. Count of task <span>{{array.length}}</span></div>
+  <hr>
+</div>
+
+<div class="container">
+  <div class="head-container">
+    <input id="input" class="form-control" type="text" [(ngModel)]="newTaskName" name="newTaskName">
+    <button id="btn-add" class="btn btn-success btn-lg" (click)="addNewTask()">Add</button>
+  </div>
+  <hr>
+</div>
+<app-angular-task-list [tasks]="array" (tasksUpdated)="refreshTasks($event)"></app-angular-task-list>

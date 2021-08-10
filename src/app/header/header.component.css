@@ -1,0 +1,16 @@
+.header {
+    font-size: 30px;
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    margin: 0;
+    padding:0 0 10px;
+    background-color: rgb(226, 226, 226);
+  }
+  
+  hr {
+    background-color: rgb(143, 143, 143);
+    height: 2px;
+    margin: 0;
+    padding: 0;
+  }

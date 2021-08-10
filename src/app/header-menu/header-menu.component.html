@@ -1,0 +1,29 @@
+<ul class="nav nav-tabs">
+  <div class="container">
+    <div class="semi">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/users']" style="color: black;">Last
+          works >>> </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/cenzor']" (click)="activeBtn('cenzor')"
+          [ngClass]="taskName === 'cenzor'  ? 'active green' : ''">Cenzor</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/task']" (click)="activeBtn('task')"
+          [ngClass]="taskName === 'task' ? 'active green' : ''">Task</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="[ '/users']" (click)="activeBtn('users')"
+          [ngClass]="taskName === 'users'  ? 'active green' : ''">Users</a>
+      </li>
+
+    </div>
+    <div class="semi">
+      <li class="nav-item">
+        <a class="nav-link" href="#" style="color: red;">Back to
+          >>> Home</a>
+      </li>
+    </div>
+  </div>
+</ul>

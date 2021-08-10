@@ -1,0 +1,27 @@
+
+<app-header-menu></app-header-menu>
+<div class="container">
+  <div class="col col-8 semi-header">
+    <div class="col col-5">
+      <div id="text-msg-bad-words">
+        <span>Bad words:</span>
+        <span id="bad-words-red">{{badWords}}</span>
+      </div>
+    </div>
+    <div class="input-group ">
+      <input type="text" [(ngModel)]="newWord" name="newWord" class="form-control"
+        placeholder="{{placeholderForBadWords}}" aria-label="Username" id="inputField"
+        [style.border]="borderForInput ?'':'2px solid red'">
+      <button type="button" id="addBtn" (click)="addBadWords()" class="btn btn-warning btn-lg">Add</button>
+      <button type="button" id="resetBtn" (click)="reset()" class="btn btn-danger btn-lg">Reset</button>
+    </div>
+    <div class="input-group">
+      <textarea class="form-control text-area" placeholder="{{placeholderForTextArea}}" id="text-area" cols="30"
+        rows="7" [(ngModel)]="textArea" name="textArea"
+        [style.border]="touched ? valid ? '2px solid green' : '2px solid red' : ''"></textarea>
+    </div>
+    <div class="input-group mt-2 d-grid gap-2">
+      <button type="button" id="cenzorBtn" class="btn btn-success" (click)="checkWithCenzor()">Cenzor</button>
+    </div>
+  </div>
+</div>

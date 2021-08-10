@@ -1,0 +1,35 @@
+
+.btn-on-card {
+    width: 100%;
+    font-size: 20px;
+  }
+  
+  .card-title {
+    display: flex;
+    justify-content: center;
+    color: red;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    border-bottom: 2px solid gainsboro;
+  }
+  
+  .card {
+    min-width: 400px;
+    border-radius: 10px;
+  }
+  
+  .card-img-top {
+    height: 150px;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    justify-items: center;
+    height: 100%;
+    padding: 300px 0;
+  }
+  

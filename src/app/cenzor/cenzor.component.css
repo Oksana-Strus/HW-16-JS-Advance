@@ -1,0 +1,41 @@
+#bad-words-red{
+color: red;
+}
+
+
+#text-msg-bad-words {
+    width: 100%;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#resetBtn {
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+#addBtn {
+    margin: 10px;
+    border-radius: 5px;
+}
+
+#inputField {
+    margin: 10px 0;
+    border-radius: 5px;
+}
+
+.semi-header {
+    margin: 200px  auto;
+    background-color: rgb(233, 234, 235);
+    padding: 20px 20px 10px 20px;
+    border-radius: 5px;
+}
+
+.red {
+    font-size: 90px;
+    /* outline: 1px solid blue; */
+    /* border: 1px solid blue; */
+}
+/* .color{
+    border: 1px solid green;
+} */
